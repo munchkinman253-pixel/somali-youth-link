@@ -1,0 +1,217 @@
+/* =====================================================================
+   Somali Youth Link — Design System  ("Civic Trust")
+   ---------------------------------------------------------------------
+   - Palette: deep navy (#1E2A6B) + sky blue (#4FA3E0) from the SYL lion
+   - Reserved accent: ribbon magenta (#E23B77) used ONLY for Donate/primary CTAs
+   - Type: Sora (headings/wordmark) + Source Sans 3 (body/UI)
+   - Aesthetic: editorial, professional, generous whitespace, purposeful motion
+   ===================================================================== */
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Brand tokens */
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-sky: var(--sky);
+  --color-sky-soft: var(--sky-soft);
+  --color-give: var(--give);
+  --color-give-hover: var(--give-hover);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Brand palette */
+  --navy: oklch(0.34 0.13 268);        /* #1E2A6B-ish deep navy */
+  --navy-deep: oklch(0.27 0.11 268);   /* darker navy for panels */
+  --sky: oklch(0.66 0.13 244);         /* #4FA3E0-ish sky blue */
+  --sky-soft: oklch(0.93 0.035 240);   /* pale blue wash */
+  --give: oklch(0.6 0.2 5);            /* ribbon magenta-red CTA */
+  --give-hover: oklch(0.54 0.2 5);
+
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.26 0.03 265);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.26 0.03 265);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.26 0.03 265);
+
+  --primary: var(--navy);
+  --primary-foreground: oklch(0.98 0.01 240);
+  --secondary: oklch(0.96 0.02 240);
+  --secondary-foreground: var(--navy);
+  --muted: oklch(0.97 0.012 240);
+  --muted-foreground: oklch(0.5 0.03 260);
+  --accent: var(--sky-soft);
+  --accent-foreground: var(--navy);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.9 0.015 250);
+  --input: oklch(0.9 0.015 250);
+  --ring: var(--sky);
+
+  --chart-1: var(--sky);
+  --chart-2: oklch(0.55 0.12 250);
+  --chart-3: var(--navy);
+  --chart-4: oklch(0.7 0.1 230);
+  --chart-5: oklch(0.45 0.13 268);
+
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--navy);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: var(--sky-soft);
+  --sidebar-accent-foreground: var(--navy);
+  --sidebar-border: oklch(0.9 0.015 250);
+  --sidebar-ring: var(--sky);
+}
+
+.dark {
+  --background: oklch(0.2 0.03 265);
+  --foreground: oklch(0.95 0.01 240);
+  --card: oklch(0.25 0.035 265);
+  --card-foreground: oklch(0.95 0.01 240);
+  --popover: oklch(0.25 0.035 265);
+  --popover-foreground: oklch(0.95 0.01 240);
+  --primary: var(--sky);
+  --primary-foreground: oklch(0.2 0.03 265);
+  --secondary: oklch(0.3 0.035 265);
+  --secondary-foreground: oklch(0.95 0.01 240);
+  --muted: oklch(0.3 0.035 265);
+  --muted-foreground: oklch(0.75 0.02 250);
+  --accent: oklch(0.32 0.05 260);
+  --accent-foreground: oklch(0.95 0.01 240);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: var(--sky);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1240px;
+    }
+  }
+
+  /* Small uppercase eyebrow label */
+  .eyebrow {
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-weight: 600;
+    font-size: 0.78rem;
+    color: var(--sky);
+  }
+
+  /* Section heading */
+  .section-title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.1;
+    font-size: clamp(1.85rem, 3.5vw, 2.6rem);
+  }
+
+  /* Thin brand rule under eyebrow */
+  .brand-rule {
+    height: 3px;
+    width: 44px;
+    background: linear-gradient(90deg, var(--sky), var(--navy));
+    border-radius: 999px;
+  }
+}
+
+/* Utility for hiding scrollbars on marquees */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
